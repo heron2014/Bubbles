@@ -1,9 +1,7 @@
 # Bubbles
 
 [![Build Status](https://travis-ci.org/heron2014/Bubbles.svg?branch=master)](https://travis-ci.org/heron2014/Bubbles)
-
 [![Code Climate](https://codeclimate.com/github/heron2014/Bubbles/badges/gpa.svg)](https://codeclimate.com/github/heron2014/Bubbles)
-
 [![Test Coverage](https://codeclimate.com/github/heron2014/Bubbles/badges/coverage.svg)](https://codeclimate.com/github/heron2014/Bubbles/coverage)
 
 ## What is Bubbles? 
