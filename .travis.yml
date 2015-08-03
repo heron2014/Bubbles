@@ -3,4 +3,7 @@ node_js:
 - 0.12
 - 0.10
 after_script:
-  - npm run codeclimate
+  - node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
+env: 
+  global:
+  - CODECLIMATE_REPO_TOKEN=ea5c19d8d1385dea0fda29fec82bcd4268b999056e764d533bb33f836dd16743
