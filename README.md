@@ -23,7 +23,7 @@ This project will be fully tested and completed using TDD. No code will be writt
 
 + [x] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
 + [x] Wireframes
-+ [ ] Set up basic server 
++ [x] Set up basic server 
 + [ ] Routes and Handlers for basic layout
 + [ ] Create Redis database
 
