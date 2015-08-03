@@ -4,7 +4,7 @@
   "description": "Chat app using Redis, Socket.io and Hapi",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/tape/bin/tape ./test/*.js | tap-nyan && npm run coverage && npm run jshint",
+    "test": "./node_modules/tape/bin/tape ./test/*.js",
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "jshint .",
     "start": "node server.js",
