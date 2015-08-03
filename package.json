@@ -28,6 +28,7 @@
     "url": "https://github.com/heron2014/Bubbles/issues"
   },
   "dependencies": {
+    "handlebars": "^3.0.3",
     "hapi": "^8.8.1",
     "socket.io": "^1.3.6"
   },
