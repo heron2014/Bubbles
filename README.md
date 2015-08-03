@@ -9,7 +9,7 @@
 
 ## What is Bubbles? 
 
-Chat application using Redis , WebSocket , Hapi 
+Chat application using Redis , Socket.io , Hapi 
 
 ## Why are we building Bubbles?
 
@@ -21,7 +21,7 @@ This project will be fully tested and completed using TDD. No code will be writt
 
 #### Day 1
 
-+ [ ] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
++ [x] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
 + [ ] Wireframes
 + [ ] Set up basic server 
 + [ ] Routes and Handlers for basic layout
