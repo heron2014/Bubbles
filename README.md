@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/heron2014/Bubbles.svg?branch=master)](https://travis-ci.org/heron2014/Bubbles)
 [![Code Climate](https://codeclimate.com/github/heron2014/Bubbles/badges/gpa.svg)](https://codeclimate.com/github/heron2014/Bubbles)
 [![Test Coverage](https://codeclimate.com/github/heron2014/Bubbles/badges/coverage.svg)](https://codeclimate.com/github/heron2014/Bubbles/coverage)
+[![Dependency Status](https://david-dm.org/heron2014/Bubbles.svg)](https://david-dm.org/heron2014/Bubbles)
+[![devDependency Status](https://david-dm.org/heron2014/Bubbles/dev-status.svg)](https://david-dm.org/heron2014/Bubbles#info=devDependencies)
 
 ## What is Bubbles? 
 
