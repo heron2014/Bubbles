@@ -4,11 +4,12 @@
   "description": "Chat app using Redis, Socket.io and Hapi",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/tape/bin/tape ./test/*.js",
+    "test": "./node_modules/tape/bin/tape ./test/*.js | tap-nyan && npm run coverage && npm run jshint",
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "jshint .",
     "start": "node server.js",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon server.js",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=ea5c19d8d1385dea0fda29fec82bcd4268b999056e764d533bb33f836dd16743 codeclimate-test-reporter < lcov.info"
   },
   "repository": {
     "type": "git",
