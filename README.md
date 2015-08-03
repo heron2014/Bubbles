@@ -22,7 +22,7 @@ This project will be fully tested and completed using TDD. No code will be writt
 #### Day 1
 
 + [x] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
-+ [ ] Wireframes
++ [x] Wireframes
 + [ ] Set up basic server 
 + [ ] Routes and Handlers for basic layout
 + [ ] Create Redis database
@@ -52,4 +52,7 @@ This will be live on Heroku at the end of project but for now you can git clone 
 If you want to test: 
 ``` npm test ```
  
+
+## Wireframes
+![Imgur](http://i.imgur.com/o08AA4T.jpg)
 
