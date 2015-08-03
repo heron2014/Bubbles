@@ -1,8 +1,11 @@
 var test = require("tape"),
-  server = require("../server.js");
+  server = require("../server.js"),
+  fs = require("fs");
 
-test("check the server returns 200 response", function(t) {
+test("Check that index.html is sent when requested and returns 200 status code", function(t) {
   server.inject({method: "GET", url: "/"}, function(response){
+    var page = fs.readFileSync(__dirname + "/../public/views/index.html", "utf-8");
+    t.equal(response.result, page);
     t.equal(response.statusCode, 200);
     server.stop();
     t.end();

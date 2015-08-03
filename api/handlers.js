@@ -1,6 +1,6 @@
 var handlers = {
   home: function(request, reply) {
-    reply("server works");
+    reply.view("index");
   }
 };
 
