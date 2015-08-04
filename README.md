@@ -24,11 +24,12 @@ This project will be fully tested and completed using TDD. No code will be writt
 + [x] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
 + [x] Wireframes
 + [x] Set up basic server 
-+ [ ] Routes and Handlers for basic layout
-+ [ ] Create Redis database
++ [x] Routes and Handlers for basic layout
++ [ ] Set up socket.io
 
 #### Day 2
 
++ [ ] Create Redis database
 + [ ] Create default chat room
 + [ ] Identification of users
 
