@@ -9,3 +9,6 @@ addons:
 
 after_success:
   - npm run codeclimate
+
+env:
+	- PORT=7000
