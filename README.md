@@ -24,11 +24,12 @@ This project will be fully tested and completed using TDD. No code will be writt
 + [x] Set up code quality assurance (Travis, Code Climate, Coverage, Code Crystal)
 + [x] Wireframes
 + [x] Set up basic server 
-+ [ ] Routes and Handlers for basic layout
-+ [ ] Create Redis database
++ [x] Routes and Handlers for basic layout
 
 #### Day 2
 
++ [x] Set up socket.io
++ [ ] Create Redis database
 + [ ] Create default chat room
 + [ ] Identification of users
 
@@ -47,7 +48,14 @@ This project will be fully tested and completed using TDD. No code will be writt
 
 ## How to run Bubbles?
 
-This will be live on Heroku at the end of project but for now you can git clone this repo and run it locally. 
+This will be live on Heroku at the end of project but for now you can git clone this repo and run it locally. You will have to define an environment variable for the port like this:
+``` export PORT=7000 ```
+
+Don't forget to:
+``` npm install ```
+
+Then visit http://localhost:7000 in your favourite browser.
+
 
 If you want to test: 
 ``` npm test ```
