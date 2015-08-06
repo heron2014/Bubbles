@@ -24,10 +24,10 @@ server.route(routes);
 server.start(function(){
   var io = SocketIO.listen(server.listener);
   io.sockets.on('connection', function(socket){
-    console.log('a user connected');
     socket.on('connection name',function(user){
-      console.log(user.name);
+      // console.log(user.name);
       io.sockets.emit('new user', user.name + " has joined.");
+      console.log(user.name + " has joined.");
     });
   });
   console.log("Server is running at " + server.info.uri);

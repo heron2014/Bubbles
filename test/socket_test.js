@@ -40,7 +40,8 @@ test('Should broadcast new user once they connect',function(t){
 test("Should broadcast new user to all users", function(t) {
   var client1,
       client2;
-  var numberUsers = 0;
+  var users1 = 0,
+      users2 = 0;
 
   client1 = io.connect(socketURL, ioptions);
 
@@ -55,16 +56,20 @@ test("Should broadcast new user to all users", function(t) {
     });
 
     client2.on("new user", function(usersName) {
-      // This should be on the event of new user chatUser2 joining, but instead it is chatUser1??
-      t.equal(usersName, chatUser1.name + " has joined.", "chatUser2 has joined and chatUser1 announced.");
-      client2.disconnect();
+
+      users2++;
+
+      if (users2 === 2) { // Both users announced to client2
+        t.equal(usersName, chatUser2.name + " has joined.", "chatUser2 broadcast to itself");
+        client2.disconnect();
+      }
     });
   });
 
   client1.on('new user',function(usersName){
-    numberUsers++;
+    users1++;
 
-    if (numberUsers === 2) {
+    if (users1 === 2) { // Both users announced to client1
       t.equal(usersName, chatUser2.name + " has joined.", "chatUser2 broadcast to chatUser1");
       client1.disconnect();
       t.end();
