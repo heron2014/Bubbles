@@ -76,3 +76,37 @@ test("Should broadcast new user to all users", function(t) {
     }
   });
 });
+
+test('Should be able to broadcast messages', function(t){
+  var client1, client2, client3;
+  var message = 'Hello World';
+  var messages = 0;
+
+  var checkMessage = function(client){
+    client.on('message', function(msg){
+      t.equal(message, msg);
+      client.disconnect();
+      messages++;
+      if(messages === 3){
+        t.end();
+      };
+    });
+  };
+
+  client1 = io.connect(socketURL, ioptions);
+  checkMessage(client1);
+
+  client1.on('connect', function(data){
+    client2 = io.connect(socketURL, ioptions);
+    checkMessage(client2);
+
+    client2.on('connect', function(data){
+      client3 = io.connect(socketURL, ioptions);
+      checkMessage(client3);
+
+      client3.on('connect', function(data){
+        client2.send(message);
+      });
+    });
+  });
+});
