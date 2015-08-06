@@ -5,6 +5,8 @@ var Hapi = require("hapi"),
   path = require("path"),
   SocketIO = require('socket.io');
 
+var clients = {};
+
 
 server.connection({
   port: process.env.PORT 
@@ -21,10 +23,11 @@ server.route(routes);
 
 server.start(function(){
   var io = SocketIO.listen(server.listener);
-  io.on('connection', function(socket){
-    console.log('a user connected');
+  io.sockets.on('connection', function(socket){
     socket.on('connection name',function(user){
+      // console.log(user.name);
       io.sockets.emit('new user', user.name + " has joined.");
+      console.log(user.name + " has joined.");
     });
   });
   console.log("Server is running at " + server.info.uri);
