@@ -29,6 +29,10 @@ server.start(function(){
       io.sockets.emit('new user', user.name + " has joined.");
       console.log(user.name + " has joined.");
     });
+    socket.on("message", function(msg) {
+      io.sockets.emit("message", msg);
+    });
+
   });
   console.log("Server is running at " + server.info.uri);
 });

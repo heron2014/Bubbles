@@ -4,7 +4,7 @@ var io = require('socket.io-client'),
 
 var socketURL = 'http://0.0.0.0:7000';
 
-var ioptions ={
+var ioptions = {
   transports: ['websocket'],
   'force new connection': true
 };
@@ -84,12 +84,13 @@ test('Should be able to broadcast messages', function(t){
 
   var checkMessage = function(client){
     client.on('message', function(msg){
+      console.log(msg);
       t.equal(message, msg);
       client.disconnect();
       messages++;
       if(messages === 3){
         t.end();
-      };
+      }
     });
   };
 
