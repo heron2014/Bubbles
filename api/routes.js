@@ -5,6 +5,15 @@ var routes = [
     method: "GET",
     path: "/",
     handler: handlers.home
+  },
+  {
+    method: "GET",
+    path: "/public/{path*}",
+    handler: {
+      directory: {
+        path: "../public"
+      }
+    }
   }
 ];
 
