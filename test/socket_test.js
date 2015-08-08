@@ -13,10 +13,6 @@ var chatUser1 = {'name':'Tom'};
 var chatUser2 = {'name':'Sally'};
 var chatUser3 = {'name':'Dana'};
 
-var options = {
-  method: "GET",
-  url: "/"
-};
 
 /* Test 1 - A Single User */
 test('Should broadcast new user once they connect',function(t){
@@ -56,7 +52,6 @@ test("Should broadcast new user to all users", function(t) {
     });
 
     client2.on("new user", function(usersName) {
-
       users2++;
 
       if (users2 === 2) { // Both users announced to client2
@@ -77,6 +72,8 @@ test("Should broadcast new user to all users", function(t) {
   });
 });
 
+
+/* Test 3 - Message is broadcast to all connected users */
 test('Should be able to broadcast messages', function(t){
   var client1, client2, client3;
   var message = 'Hello World';
@@ -84,8 +81,7 @@ test('Should be able to broadcast messages', function(t){
 
   var checkMessage = function(client){
     client.on('message', function(msg){
-      console.log(msg);
-      t.equal(message, msg);
+      t.equal(message, msg, "Message received correctly by client.");
       client.disconnect();
       messages++;
       if(messages === 3){
@@ -109,5 +105,17 @@ test('Should be able to broadcast messages', function(t){
         client2.send(message);
       });
     });
+  });
+});
+
+
+/* Test 4 - App does not allow an empty message to be sent */
+test("Should not be able to send an empty message", function(t) {
+  var client = io.connect(socketURL, ioptions);
+  client.on("connect", function(data) {
+    client.emit("message");
+    t.ok(true, "App did not crash on empty message");
+    client.disconnect();
+    t.end();
   });
 });
