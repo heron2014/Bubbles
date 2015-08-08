@@ -81,7 +81,7 @@ test('Should be able to broadcast messages', function(t){
 
   var checkMessage = function(client){
     client.on('message', function(msg){
-      t.equal(message, msg, "Message received correctly by " + client);
+      t.equal(message, msg, "Message received correctly by client.");
       client.disconnect();
       messages++;
       if(messages === 3){
