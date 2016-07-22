@@ -23,7 +23,30 @@ test('server should start', (t) => {
 });
 
 
-test('stop server', (t) => {
+//this test is to check if is possible thrown error with the wrong plugin
+test("server handles plugin error", (t) => {
+  t.plan(1)
+  
+  const  Fake_Plugin = {};
+
+  Fake_Plugin.register = (server, options, next) => {
+
+    return next(new Error("failed plugin"));
+  };
+
+  Fake_Plugin.register.attributes = {
+    name: "fake plugin"
+  };
+
+  server.register(Fake_Plugin, (err) => {
+    t.equal(err instanceof Error, true, "Error is thrown when Fake_Plugin is register to server");
+  });
+
+});
+
+
+
+test('teardown', (t) => {
   server.stop((err) => {
     if (err) console.log('Termination error: ' + err);
   });
