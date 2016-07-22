@@ -1,15 +1,8 @@
 language: node_js
 node_js:
-- 0.12
-- 0.10
-
-addons:
-  code_climate:
-    repo_token: ea5c19d8d1385dea0fda29fec82bcd4268b999056e764d533bb33f836dd16743
-
+  - "4.2"
+  - "5.1"
+before_install:
+  - pip install --user codecov
 after_success:
-  - npm run codeclimate
-
-env: 
-  global: 
-    - PORT=7000
+  - codecov
