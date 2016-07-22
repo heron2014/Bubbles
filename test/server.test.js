@@ -2,7 +2,8 @@
 
 const test = require('tape');
 const server = require('../lib/server.js');
-
+const Home = require('../lib/home');
+const Hoek = require('hoek');
 
 test('initial set up test', (t) => {
   t.plan(1)
@@ -27,18 +28,19 @@ test('server should start', (t) => {
 test("server handles plugin error", (t) => {
   t.plan(1)
   
-  const  Fake_Plugin = {};
+  const orig = Home.register;
 
-  Fake_Plugin.register = (server, options, next) => {
+  Home.register = (server, options, next) => {
 
-    return next(new Error("failed plugin"));
+    Home.register = orig;
+    return next(new Error("failed register home plugin"));
   };
 
-  Fake_Plugin.register.attributes = {
+  Home.register.attributes = {
     name: "fake plugin"
   };
 
-  server.register(Fake_Plugin, (err) => {
+  server.register(Home, (err) => {
     t.equal(err instanceof Error, true, "Error is thrown when Fake_Plugin is register to server");
   });
 
