@@ -4,7 +4,7 @@
   "description": "Chat app using Redis, Socket.io and Hapi",
   "main": "lib/server.js",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*test.js && istanbul check-coverage --statements 60 --functions 60 --lines 60 --branches 60",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/_runner.js && istanbul check-coverage --statements 60 --functions 60 --lines 60 --branches 60",
     "coverage": "istanbul cover ./node_modules/.bin/tape ./tests/*.js -r html -o ./test/coverage.html",
     "start": "node lib/server.js",
     "nodemon": "nodemon server.js",
