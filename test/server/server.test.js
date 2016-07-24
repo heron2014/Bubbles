@@ -1,9 +1,8 @@
 'use strict';
 
 const test = require('tape');
-const server = require('../lib/server.js');
-const Home = require('../lib/home');
-const Hoek = require('hoek');
+const server = require('../../lib/server.js');
+const Home = require('../../lib/home');
 
 test('initial set up test', (t) => {
   t.plan(1)
