@@ -33,3 +33,4 @@ node_modules
 
 .env
 dist
+lib/config/development.json

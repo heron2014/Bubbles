@@ -29,8 +29,10 @@
   },
   "dependencies": {
     "babel-preset-es2015": "^6.9.0",
+    "bell": "^8.0.0",
     "handlebars": "^4.0.5",
     "hapi": "^13.5.0",
+    "hapi-auth-cookie": "^6.1.1",
     "hapi-error": "^1.0.4",
     "hoek": "^4.0.1",
     "inert": "^4.0.1",
