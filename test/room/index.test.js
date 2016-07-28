@@ -3,9 +3,8 @@
 const test = require('tape');
 const server = require('../../lib/server.js');
 const config = require('../../lib/config');
-var JWT = require('jsonwebtoken');
+const JWT = require('jsonwebtoken');
 const redisClient = require('redis-connection')();
-
 
 test("Attempt to access /rooms content (without auth token)", (t) => {
   t.plan(1);
@@ -107,6 +106,7 @@ test("Simulate Authentication on /room/dinner, token ok", (t) => {
 
   server.inject(options, (response) => {
     t.equals(response.statusCode, 200, "VALID Token should succeed!");
+     redisClient.end();
     t.end();
   });
 });

@@ -41,6 +41,7 @@
     "jsonwebtoken": "^7.1.6",
     "mongoose": "^4.5.7",
     "nock": "^8.0.0",
+    "qs": "^6.2.1",
     "redis-connection": "^5.0.0",
     "socket.io": "^1.4.8",
     "socket.io-client": "^1.4.8",

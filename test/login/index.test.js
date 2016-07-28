@@ -5,8 +5,7 @@ const server = require('../../lib/server.js');
 const url = require('url');
 const qs = require('qs');
 const config = require('../../lib/config');
-var JWT = require('jsonwebtoken');
-const redisClient = require('redis-connection')();
+
 test('/login endpoint redirects to facebook', (t) => {
   t.plan(3);
 
