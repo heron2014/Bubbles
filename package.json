@@ -30,6 +30,7 @@
   "dependencies": {
     "babel-preset-es2015": "^6.9.0",
     "bell": "^8.0.0",
+    "env2": "^2.1.0",
     "fb": "^1.1.1",
     "handlebars": "^4.0.5",
     "hapi": "^13.5.0",
