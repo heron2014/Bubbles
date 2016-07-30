@@ -26,7 +26,7 @@ test('server should start', (t) => {
 //this test is to check if is possible thrown error with the wrong plugin
 test("server handles plugin error", (t) => {
   t.plan(1)
-  
+
   const orig = Home.register;
 
   Home.register = (server, options, next) => {
@@ -44,8 +44,6 @@ test("server handles plugin error", (t) => {
   });
 
 });
-
-
 
 test('teardown', (t) => {
   server.stop((err) => {
