@@ -7,6 +7,15 @@ console.log('working');
     var socket = io('http://localhost:3000/roomslist'); //roomslist is namespace for socket - it is not a route!
     var newRoomInput = $("input[name='newRoom']");
 
+    var compare = function (a,b) {
+      if (a.timestamp > b.timestamp) {
+        return -1;
+      } else if (a.timestamp < b.timestamp) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
     var renderChatRooms = chatrooms => {
       var roomsListUL = $('#roomsListUL');
       var listStr = '';
@@ -19,7 +28,8 @@ console.log('working');
     // get the list of chatrooms
     socket.emit('getChatRooms');
     socket.on('chatRoomsList', chatrooms => {
-      renderChatRooms(JSON.parse(chatrooms));
+      let order = JSON.parse(chatrooms).sort(compare);
+      renderChatRooms(order);
     });
 
     socket.on('connect', () => console.log('Connected to the Server'));
