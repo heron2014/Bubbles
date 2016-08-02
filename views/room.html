@@ -1,1 +1,21 @@
 <h1>Welcome to the {{title}}</h1>
+<div class="logged">
+  <h1>Logged in</h1>
+  <img src="{{user.profilePic}}" alt=""/>
+  <p>{{user.fullName}}</p>
+</div>
+<br>
+<br>
+<h1>Active users</h1>
+<div class="chatUsers">
+
+</div>
+
+<a href="/rooms">Rooms</a>
+<input type="hidden" name="userName" value="{{user.fullName}}"></input>
+<input type="hidden" name="userPic" value="{{user.profilePic}}"></input>
+<input type="hidden" name="roomId" value="{{id}}"></input>
+<input type="hidden" name="roomTitle" value="{{title}}"></input>
+
+
+<script src="/public/js/chat.js"></script>

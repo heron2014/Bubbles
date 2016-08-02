@@ -11,8 +11,6 @@ console.log('working');
       var roomsListUL = $('#roomsListUL');
       var listStr = '';
       for (let cat of chatrooms) {
-        console.log(chatrooms);
-
         listStr += `<a href="/room/${cat.title}"><li>${cat.title}</li>`;
       }
       roomsListUL.html('').append(listStr);
@@ -26,7 +24,7 @@ console.log('working');
 
     socket.on('connect', () => console.log('Connected to the Server'));
 
-    $('#createBtn').on('click', () => {
+    $('#createBtn').on('click', (evt) => {
       if (newRoomInput !== '') {
         socket.emit('createNewRoom', newRoomInput.val());
         newRoomInput.val('');
