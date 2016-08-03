@@ -105,6 +105,7 @@ test("Simulate Authentication on /room/testRoom, token ok", (t) => {
 
   server.inject(options, (response) => {
     t.equals(response.statusCode, 200, "VALID Token should succeed!");
+    redisClient.hdel('rooms', 'testRoom');
     t.end();
   });
 });

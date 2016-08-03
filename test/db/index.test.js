@@ -52,7 +52,6 @@ test('find room by name', (t) => {
   t.end();
 });
 
-
 test('get all the rooms', (t) => {
   t.plan(1);
 
@@ -85,7 +84,7 @@ test('removed user from testRoom', (t) => {
   // const socket = require()
   let socket = require('socket.io')
   helpers.removeUserFromRoom('testRoom', socket, (err, room) => {
-    t.equals(room.title, 'testRoom', 'Removed from correct room')
+    t.equals(room.title, 'testRoom', 'Removed from correct room');
     t.end();
   });
 });

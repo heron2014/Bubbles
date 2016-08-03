@@ -3,6 +3,7 @@
 const test = require('tape');
 const ioclient = require('socket.io-client');
 const server = require('../../lib/server.js');
+const helpers = require('../../lib/db/helpers');
 
 test('Socket connected to the client', (t) => {
   t.plan(1);
