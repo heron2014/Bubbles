@@ -27,7 +27,6 @@ test('create new room', (t) => {
 
   helpers.createNewRoom('testRoom', (err, response) => {
     t.equals(response, 'OK', 'Room has been created , response is OK');
-    // redisClient.hdel(listName, 'testRoom');
     t.end();
   });
 });
@@ -82,8 +81,7 @@ test('get user id', (t) => {
 
 test('removed user from testRoom', (t) => {
   t.plan(1);
-  // const socket = require()
-  let socket = require('socket.io')
+  let socket = require('socket.io');
   helpers.removeUserFromRoom('testRoom', socket, (err, room) => {
     t.equals(room.title, 'testRoom', 'Removed from correct room');
     t.end();
