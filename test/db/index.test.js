@@ -72,6 +72,7 @@ test('generate token', (t) => {
 test('get user id', (t) => {
   t.plan(1);
   const token = JWT.sign({ id: "1234", "displayName": "Anita", valid: true}, config.sessionSecret);
+  redisClient.set(1234, JSON.stringify({ id: "1234", "displayName": "Anita", valid: true}));
   helpers.getUserId(token, (err, user) => {
     let userParsed = JSON.parse(user);
     t.equals(userParsed.id, '1234', 'User id correct')
