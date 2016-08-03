@@ -7,7 +7,7 @@ console.log('working');
     var socket = io('http://localhost:3000/roomslist'); //roomslist is namespace for socket - it is not a route!
     var newRoomInput = $("input[name='newRoom']");
 
-    var compare = function (a,b) {
+    var compare = function (a, b) {
       if (a.timestamp > b.timestamp) {
         return -1;
       } else if (a.timestamp < b.timestamp) {

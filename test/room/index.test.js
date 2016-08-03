@@ -91,15 +91,14 @@ test("Authentication failed: right JWT token but user does not exist in redis", 
 });
 
 
-test("Simulate Authentication on /room/dinner, token ok", (t) => {
+test("Simulate Authentication on /room/testRoom, token ok", (t) => {
   t.plan(1);
   const token = JWT.sign({ id: "1234", "displayName": "Anita", valid: true}, config.sessionSecret);
 
   const options = {
     method: "GET",
-    url: "/room/dinner",
-    headers: { cookie: "token=" + token },
-    credentials: { id: "1234", "displayName": "Anita", valid: true}
+    url: "/room/testRoom",
+    headers: { cookie: "token=" + token }
   };
 
   redisClient.set(1234, JSON.stringify({ id: "1234", "displayName": "Anita", valid: true}));
