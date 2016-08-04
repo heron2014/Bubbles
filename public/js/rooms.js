@@ -3,7 +3,8 @@
 (function ($) {
 
   $(() => {
-    var socket = io('http://localhost:3000/roomslist',{
+    var host = $("input[name='host']").val();
+    var socket = io(host + '/roomslist',{
       transports: ['websocket']
     }); //roomslist is namespace for socket - it is not a route!
     var newRoomInput = $("input[name='newRoom']");

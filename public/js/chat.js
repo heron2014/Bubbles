@@ -3,7 +3,8 @@
 (function ($) {
 
   $(() => {
-    var socket = io('http://localhost:3000/chatter', {
+    var host = $("input[name='host']").val();
+    var socket = io(host + '/chatter', {
       transports: ['websocket']
     });
     var userName = $("input[name='userName']").val();
