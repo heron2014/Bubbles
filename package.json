@@ -43,9 +43,11 @@
     "mongoose": "^4.5.7",
     "nock": "^8.0.0",
     "qs": "^6.2.1",
+    "redis": "^2.6.2",
     "redis-connection": "^5.0.0",
     "socket.io": "^1.4.8",
     "socket.io-client": "^1.4.8",
+    "socket.io-redis": "^1.0.0",
     "vision": "^4.1.0"
   },
   "devDependencies": {
