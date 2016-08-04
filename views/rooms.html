@@ -1,6 +1,13 @@
 
 <h1>Welcome {{user.fullName}}</h1>
 <img src="{{user.profilePic}}" alt=""/>
+
+<input type="text" name="newRoom" placeholder="Create new chat room">
+<a href="#" id="createBtn">Create</a>
+<br>
 <h1>List of all rooms</h1>
+<ul class="roomsList" id="roomsListUL">
+
+</ul>
 <a href="/logout">Logout</a>
 <script src="/public/js/rooms.js"></script>
