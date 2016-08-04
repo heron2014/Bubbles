@@ -3,7 +3,7 @@
 (function ($) {
 
   $(() => {
-    var host = $("input[name='host']").val();
+    var host = $("input[name='host']").val().toString();
     var socket = io(host + '/chatter', {
       transports: ['websocket']
     });

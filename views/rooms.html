@@ -7,7 +7,9 @@
 <br>
 <h1>List of all rooms</h1>
 <ul class="roomsList" id="roomsListUL">
-
+  {{#each rooms}}
+    <a href="/room/{{title}}"><li>{{title}}</li>
+  {{/each}}
 </ul>
 <a href="/logout">Logout</a>
 <input type="hidden" name="host" value="{{host}}"></input>

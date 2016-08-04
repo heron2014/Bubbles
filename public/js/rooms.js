@@ -3,7 +3,7 @@
 (function ($) {
 
   $(() => {
-    var host = $("input[name='host']").val();
+    var host = $("input[name='host']").val().toString();
     var socket = io(host + '/roomslist',{
       transports: ['websocket']
     }); //roomslist is namespace for socket - it is not a route!
