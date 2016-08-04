@@ -3,7 +3,9 @@
 (function ($) {
 
   $(() => {
-    var socket = io('http://localhost:3000/roomslist'); //roomslist is namespace for socket - it is not a route!
+    var socket = io('http://localhost:3000/roomslist',{
+      transports: ['websocket']
+    }); //roomslist is namespace for socket - it is not a route!
     var newRoomInput = $("input[name='newRoom']");
 
     var compare = function (a, b) {

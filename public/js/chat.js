@@ -3,7 +3,9 @@
 (function ($) {
 
   $(() => {
-    var socket = io('http://localhost:3000/chatter');
+    var socket = io('http://localhost:3000/chatter', {
+      transports: ['websocket']
+    });
     var userName = $("input[name='userName']").val();
     var userPic = $("input[name='userPic']").val();
     var roomId = $("input[name='roomId']").val();
