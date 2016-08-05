@@ -4,7 +4,7 @@ const test = require('tape');
 const server = require('../../lib/server.js');
 const config = require('../../lib/config');
 const JWT = require('jsonwebtoken');
-const redisClient = require('redis-connection')();
+const redisClient = require('../../lib/db/redis_client');
 
 test("Attempt to access /rooms content (without auth token)", (t) => {
   t.plan(1);

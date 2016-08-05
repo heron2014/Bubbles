@@ -3,7 +3,7 @@
 const test = require('tape');
 const helpers = require('../../lib/db/helpers');
 const db = require('../../lib/db');
-const redisClient = require('redis-connection')();
+const redisClient = require('../../lib/db/redis_client');
 const config = require('../../lib/config');
 const JWT = require('jsonwebtoken');
 

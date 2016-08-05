@@ -3,17 +3,17 @@
 (function ($) {
 
   $(() => {
-    var host = $("input[name='host']").val().toString();
-    var socket = io(host + '/chatter', {
+    let host = $("input[name='host']").val().toString();
+    let socket = io(host + '/chatter', {
       transports: ['websocket']
     });
-    var userName = $("input[name='userName']").val();
-    var userPic = $("input[name='userPic']").val();
-    var roomId = $("input[name='roomId']").val();
-    var roomTitle = $("input[name='roomTitle']").val();
-    var chatUsers = $('.chatUsers');
-    var chatInput = $("input[name='userInput']");
-    var chatMessagesDiv = $('.chatMessages');
+    let userName = $("input[name='userName']").val();
+    let userPic = $("input[name='userPic']").val();
+    let roomId = $("input[name='roomId']").val();
+    let roomTitle = $("input[name='roomTitle']").val();
+    let chatUsers = $('.chatUsers');
+    let chatInput = $("input[name='userInput']");
+    let chatMessagesDiv = $('.chatMessages');
 
     socket.on('connect', () => {
       socket.emit('join', {
@@ -39,8 +39,8 @@
     })
 
     //update feed/messages function
-    var updateFeed = (userPic, message) => {
-      var template = `<div class="chatBlock">
+    let updateFeed = (userPic, message) => {
+      let template = `<div class="chatBlock">
                         <div class="userPic"><img src="${userPic}"></div>
                         <div class="chatMsg">${message}</div>
                       </div>;`
@@ -73,7 +73,7 @@
 
     //get the messages from other users
     socket.on('inMessage', data => {
-      var parsedData = JSON.parse(data);
+      let parsedData = JSON.parse(data);
       updateFeed(parsedData.userPic, parsedData.message);
     })
   });

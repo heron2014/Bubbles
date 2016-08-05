@@ -3,13 +3,13 @@
 (function ($) {
 
   $(() => {
-    var host = $("input[name='host']").val().toString();
-    var socket = io(host + '/roomslist',{
+    let host = $("input[name='host']").val().toString();
+    let socket = io(host + '/roomslist',{
       transports: ['websocket']
     }); //roomslist is namespace for socket - it is not a route!
-    var newRoomInput = $("input[name='newRoom']");
+    let newRoomInput = $("input[name='newRoom']");
 
-    var compare = function (a, b) {
+    let compare = function (a, b) {
       if (a.timestamp > b.timestamp) {
         return -1;
       } else if (a.timestamp < b.timestamp) {
@@ -18,9 +18,9 @@
         return 0;
       }
     }
-    var renderChatRooms = chatrooms => {
-      var roomsListUL = $('#roomsListUL');
-      var listStr = '';
+    let renderChatRooms = chatrooms => {
+      let roomsListUL = $('#roomsListUL');
+      let listStr = '';
       for (let cat of chatrooms) {
         listStr += `<a href="/room/${cat.title}"><li>${cat.title}</li>`;
       }
