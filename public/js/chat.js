@@ -41,8 +41,8 @@
     //update feed/messages function
     let updateFeed = (userPic, message) => {
       let template = `<div class="chatBlock">
-                        <div class="userPic"><img src="${userPic}"></div>
-                        <div class="chatMsg">${message}</div>
+                        <p><img src="${userPic}"></p>
+                        <p class="msg">${message}</p>
                       </div>;`
       //first we hide , then latest messages goes first - prependTo , slideDown will animate the message for 2s
       $(template).hide().prependTo(chatMessagesDiv).slideDown(200);
