@@ -1,3 +1,177 @@
+html {
+  margin:0;
+  height: 100vh;
+}
+
+body {
+  background-color: #CEB9FE;
+}
+
 h1 {
-	color: grey;
+  color: grey;
+}
+
+
+/*chat room styling*/
+
+/*top-banner */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 2.3em;
+  margin: 0;
+  padding: 3px;
+  background-color: #000000;
+}
+
+.top-banner {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-banner p {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.top-banner a:first-of-type i.fa.fa-home {
+  color: #fff;
+  font-size: 1.5em;
+  padding: 4px;
+}
+
+.top-banner a:last-of-type img {
+  border-radius: 50%;
+  width: 25px;
+  padding-top: 2px;
+}
+/* End top-banner */
+
+/*active users*/
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.active-users {
+  width: 280px;
+  height: 92.5%;
+  position: fixed;
+  right: 0;
+  background-color: #B8A6E4;
+  top: 2.3em;
+  overflow-y: auto;
+}
+
+.users-list li {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #A68EE0;
+  padding: 10px;
+}
+
+.users-list a {
+  align-self: center;
+  padding: 0 10px 0 0;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.users-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+
+/*End active users*/
+/*message input */
+.typePanel {
+  background-color: #FFEC57;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  height: 2.3em;
+  padding: 3px;
+  position: fixed;
+}
+
+i.fa.fa-ellipsis-h {
+  padding-left: 1em;
+  color: #252525;
+}
+
+input[name="userInput"] {
+  border: 0;
+  background-color: inherit;
+  font-size: 1em;
+  height: 2em;
+  width: 85%;
+  padding: 1em;
+  margin-right: .1%;
+  color: #000000;
+  z-index: 1;
+}
+
+input[name="userInput"]:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #252525;
+}
+
+:-moz-placeholder {
+  color: #252525;
+}
+
+::-moz-placeholder {
+  color: #252525;
+}
+
+:-ms-input-placeholder {
+  color: #252525;
+}
+
+/* End message input */
+
+
+@media only screen and (max-width: 1224px) {
+  .active-users-inner {
+    width: 250px;
+  }
+  .active-users-inner a {
+    padding: 0.8em;
+  }
+  .active-users-menu a {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .active-users-inner {
+    width: 220px;
+  }
+  .active-users-inner a {
+    padding: 0.7em;
+  }
+  .active-users-menu a {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .active-users-inner {
+    width: 220px;
+  }
 }

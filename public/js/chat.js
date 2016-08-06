@@ -11,7 +11,7 @@
     let userPic = $("input[name='userPic']").val();
     let roomId = $("input[name='roomId']").val();
     let roomTitle = $("input[name='roomTitle']").val();
-    let chatUsers = $('.chatUsers');
+    let chatUsers = $('.users-list');
     let chatInput = $("input[name='userInput']");
     let chatMessagesDiv = $('.chatMessages');
 
@@ -25,8 +25,8 @@
     });
 
     let userList = user => {
-      return `<img src="${user.userPic}" alt="${user.userName}">
-              <p>${user.userName}</p>`;
+      return `<li><a href="#"><img src="${user.userPic}" alt="${user.userName}"></a>
+              <a href="#">${user.userName}</a></li>`;
     };
 
     socket.on('updateUsersList', data => {
