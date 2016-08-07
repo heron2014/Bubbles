@@ -41,6 +41,16 @@
     //update feed/messages function
     let updateFeed = (userPic, message) => {
       let template = `<div class="chatBlock">
+                        <p class="msg">${message}</p>
+                        <p><img src="${userPic}"></p>
+                      </div>;`
+      //first we hide , then latest messages goes first - prependTo , slideDown will animate the message for 2s
+      $(template).hide().prependTo(chatMessagesDiv).slideDown(200);
+    }
+
+    //update feed/messages function
+    let updateFeedFromOthers = (userPic, message) => {
+      let template = `<div class="chatBlockOthers">
                         <p><img src="${userPic}"></p>
                         <p class="msg">${message}</p>
                       </div>;`
@@ -74,7 +84,7 @@
     //get the messages from other users
     socket.on('inMessage', data => {
       let parsedData = JSON.parse(data);
-      updateFeed(parsedData.userPic, parsedData.message);
+      updateFeedFromOthers(parsedData.userPic, parsedData.message);
     })
   });
 

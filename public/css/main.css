@@ -147,7 +147,7 @@ input[name="userInput"]:focus{
   margin-top: 2.8em;
 }
 
-.chatBlock {
+.chatBlock, .chatBlockOthers {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -158,13 +158,12 @@ input[name="userInput"]:focus{
   margin: 10px;
 }
 
-.chatBlock p img {
+.chatBlockOthers p img, .chatBlock p img {
   width: 30px;
   border-radius: 50%;
 }
 
-.chatBlock p.msg {
-  margin-left: 30px;
+.chatBlockOthers p.msg, .chatBlock p.msg {
   width: 80vw;
   align-self: center;
   padding: 10px 18px;
@@ -173,7 +172,15 @@ input[name="userInput"]:focus{
   background-color: #fff;
 }
 
-.chatBlock p.msg::before {
+.chatBlockOthers p.msg {
+  margin-left: 30px;
+}
+
+.chatBlock p.msg {
+  margin-right: 30px;
+}
+
+.chatBlockOthers p.msg::before, .chatBlock p.msg::before {
   border-radius: 10px;
   width: 10px;
   height: 10px;
@@ -185,9 +192,17 @@ input[name="userInput"]:focus{
   /*bottom: -8px;
   left: -12px;*/
   bottom: 18px;
+}
+
+.chatBlockOthers p.msg::before {
   left: -20px;
 }
-.chatBlock p.msg::after {
+
+.chatBlock p.msg::before {
+  right: -20px;
+}
+
+.chatBlockOthers p.msg::after, .chatBlock p.msg::after {
   border-radius: 20px;
   width: 20px;
   height: 20px;
@@ -200,6 +215,13 @@ input[name="userInput"]:focus{
   /*bottom: 0;*/
   /*left: -5px;*/
   bottom: 6px;
+}
+
+.chatBlock p.msg::after {
+  right: -10px;
+}
+
+.chatBlockOthers p.msg::after {
   left: -10px;
 }
 
