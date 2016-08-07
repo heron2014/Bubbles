@@ -46,19 +46,19 @@ body {
   transition: all 0.1s ease-out;
 }
 
-.button--bubble {
+.button-bubble {
   position: relative;
   z-index: 2;
   color: white;
   background: none;
 }
 
-.button--bubble__container {
+.button-bubble-container {
   position: relative;
   display: inline-block;
 }
 
-.button--bubble__container .effect-button {
+.button-bubble-container .effect-button {
   position: absolute;
   width: 50%;
   height: 25%;
@@ -72,7 +72,7 @@ body {
   transition: background 0.1s ease-out;
 }
 
-.button--bubble__effect-container {
+.button-bubble-effect-container {
   position: absolute;
   display: block;
   width: 200%;
@@ -86,7 +86,7 @@ body {
   pointer-events: none;
 }
 
-.button--bubble__effect-container .circle {
+.button-bubble-effect-container .circle {
   position: absolute;
   width: 25px;
   height: 25px;
@@ -96,12 +96,12 @@ body {
   transition: background 0.1s ease-out;
 }
 
-.button--bubble__effect-container .circle.top-left {
+.button-bubble-effect-container .circle.top-left {
   top: 40%;
   left: 27%;
 }
 
-.button--bubble__effect-container .circle.bottom-right {
+.button-bubble-effect-container .circle.bottom-right {
   bottom: 40%;
   right: 27%;
 }

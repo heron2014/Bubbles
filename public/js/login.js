@@ -2,7 +2,7 @@
 
 (function ($) {
 
-  $('.button--bubble').each(function() {
+  $('.button-bubble').each(function() {
     var $circlesTopLeft = $(this).parent().find('.circle.top-left');
     var $circlesBottomRight = $(this).parent().find('.circle.bottom-right');
 
