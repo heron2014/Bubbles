@@ -1,33 +1,41 @@
-<div class="login-wrapper">
-  <div class="login">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-          <feComposite in="SourceGraphic" in2="goo"/>
-        </filter>
-      </defs>
-    </svg>
+<div class="wrapper">
+  <div class="logo-container">
+    <h1>Logo</h1>
+  </div>
 
-    <span class="button-bubble-container">
-      <a href="/login" class="button button-bubble">
-        Login via Facebook
-      </a>
-      <span class="button-bubble-effect-container">
-        <span class="circle top-left"></span>
-        <span class="circle top-left"></span>
-        <span class="circle top-left"></span>
 
-        <span class="button effect-button"></span>
+  <div class="login-wrapper">
+    <div class="login">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo"/>
+          </filter>
+        </defs>
+      </svg>
 
-        <span class="circle bottom-right"></span>
-        <span class="circle bottom-right"></span>
-        <span class="circle bottom-right"></span>
+      <span class="button-bubble-container">
+        <a href="/login" class="button button-bubble">
+          Login via Facebook
+        </a>
+        <span class="button-bubble-effect-container">
+          <span class="circle top-left"></span>
+          <span class="circle top-left"></span>
+          <span class="circle top-left"></span>
+
+          <span class="button effect-button"></span>
+
+          <span class="circle bottom-right"></span>
+          <span class="circle bottom-right"></span>
+          <span class="circle bottom-right"></span>
+        </span>
       </span>
-    </span>
+    </div>
   </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="/public/js/login.js"></script>

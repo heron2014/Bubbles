@@ -1,6 +1,7 @@
 html {
   margin:0;
   height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 
 /*login page*/
 
-.login-wrapper {
+.login-wrapper, .wrapper {
   height: 100vh;
   display: -webkit-flex;
   display: -moz-flex;
@@ -17,11 +18,22 @@ body {
   display: -o-flex;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.login {
-  max-width: 50%;
+.wrapper {
+  flex-direction: column;
+}
+
+.logo-container {
+  padding-top: 1em;
+}
+
+.logo-container h1 {
+  align-self: center;
+  font-size: 2em;
+  color: #222;
+  padding-top: 2em;
 }
 
 /*login button styling*/
@@ -56,6 +68,7 @@ body {
 .button-bubble-container {
   position: relative;
   display: inline-block;
+  background-color: #222;
 }
 
 .button-bubble-container .effect-button {
@@ -66,9 +79,11 @@ body {
   left: 25%;
   z-index: 1;
   -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
           transform: translateY(-50%);
   background: #222;
   -webkit-transition: background 0.1s ease-out;
+  -moz-transition: background 0.1s ease-out;
   transition: background 0.1s ease-out;
 }
 
@@ -80,8 +95,10 @@ body {
   top: -150%;
   left: -50%;
   -webkit-filter: url("#goo");
+  -moz-filter: url("#goo");
   filter: url("#goo");
   -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
   pointer-events: none;
 }
@@ -93,6 +110,7 @@ body {
   border-radius: 15px;
   background: #222;
   -webkit-transition: background 0.1s ease-out;
+  -moz-transition: background 0.1s ease-out;
   transition: background 0.1s ease-out;
 }
 
@@ -116,9 +134,6 @@ body {
 /*end login button styling*/
 
 /*End login page*/
-h1 {
-  color: grey;
-}
 
 
 /*chat room styling*/
