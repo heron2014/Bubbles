@@ -14,6 +14,18 @@
     var chatUsers = $('.users-list');
     var chatInput = $("input[name='userInput']");
     var chatMessagesDiv = $('.chatMessages');
+    var slideOn = $('#slide-on');
+
+    slideOn.on('click', function (evt) {
+      var activeUsersDiv = $('.active-users');
+      if(activeUsersDiv.css("right") == "-120px") {
+       activeUsersDiv.animate({"right": '+=120'});
+       $(this).animate({"right": '+=120'});
+      } else{
+       activeUsersDiv.animate({"right": '-=120'});
+       $(this).animate({"right": '-=120'});
+      }
+    })
 
     socket.on('connect', () => {
       socket.emit('join', {

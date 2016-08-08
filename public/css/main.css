@@ -183,6 +183,10 @@ header {
   background: transparent;
 }
 
+#slide-on {
+  display: none;
+}
+
 .active-users {
   width: 280px;
   height: 92.5%;
@@ -378,38 +382,53 @@ input[name="userInput"]:focus{
 }
 
 input[name="newRoom"] {
-  padding: 10px 50px;
+  padding: 10px;
   background-color: #FFEC57;
   border: none;
 }
 /*end rooms styling */
 
 @media only screen and (max-width: 1224px) {
-  .active-users-inner {
+  .active-users {
     width: 250px;
   }
-  .active-users-inner a {
-    padding: 0.8em;
-  }
-  .active-users-menu a {
-    font-size: 1em;
-  }
+
 }
 
 @media only screen and (max-width: 768px) {
-  .active-users-inner {
-    width: 220px;
+  .active-users {
+    width: 200px;
   }
-  .active-users-inner a {
-    padding: 0.7em;
+  .users-list img {
+    width: 40px;
   }
-  .active-users-menu a {
-    font-size: 0.8em;
+
+  .users-list a {
+    font-size: 0.9em;
   }
+
 }
 
 @media only screen and (max-width: 468px) {
-  .active-users-inner {
-    width: 220px;
+
+  #slide-on {
+    display:block;
+    border: none;
+    background-color: #FFEC57;
+    outline: none;
+    width: 40px;
+  }
+
+  .active-users {
+    width: 150px;
+    right: -120px;
+  }
+
+  .users-list img {
+    width: 30px;
+  }
+
+  .users-list a {
+    font-size: 0.8em;
   }
 }
