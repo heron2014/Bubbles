@@ -243,9 +243,8 @@ input[name="userInput"] {
   border: 0;
   background-color: inherit;
   font-size: 1em;
-  height: 2em;
   width: 85%;
-  padding: 1em;
+  padding: 10px;
   margin-right: .1%;
   color: #000000;
   z-index: 1;
@@ -400,7 +399,7 @@ input[name="newRoom"] {
     width: 230px;
   }
 
-  .chatBlock p.msg {
+  .chatBlock p.msg, .chatBlockOthers p.msg {
     width: 75vw;
   }
 
@@ -408,10 +407,10 @@ input[name="newRoom"] {
 
 @media only screen and (max-width: 1224px) {
   .active-users {
-    width: 220px;
+    width: 200px;
   }
 
-  .chatBlock p.msg {
+  .chatBlock p.msg, .chatBlockOthers p.msg {
     width: 60vw;
   }
 
@@ -419,7 +418,7 @@ input[name="newRoom"] {
 
 @media only screen and (max-width: 768px) {
   .active-users {
-    width: 180px;
+    width: 160px;
   }
   .users-list img {
     width: 40px;
@@ -429,7 +428,7 @@ input[name="newRoom"] {
     font-size: 0.9em;
   }
 
-  .chatBlock p.msg {
+  .chatBlock p.msg, .chatBlockOthers p.msg {
     width: 60vw;
   }
 
@@ -448,6 +447,7 @@ input[name="newRoom"] {
   .active-users {
     width: 150px;
     right: -120px;
+    z-index: 9999;
   }
 
   .users-list img {
@@ -458,7 +458,7 @@ input[name="newRoom"] {
     font-size: 0.8em;
   }
 
-  .chatBlock p.msg {
+  .chatBlock p.msg, .chatBlockOthers p.msg {
     width: 70vw;
   }
 
