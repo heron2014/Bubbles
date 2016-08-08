@@ -87,3 +87,11 @@ test('removed user from testRoom', (t) => {
     t.end();
   });
 });
+
+test('validate messages', (t) => {
+  t.plan(1);
+  let nastyMessage = '<script>some bad message</script>'
+  let validateMessages = helpers.validateMessages(nastyMessage);
+  t.equals(validateMessages, '&ltscript&gtsome bad message&lt/script&gt', 'Validated string message')
+  t.end();
+});
