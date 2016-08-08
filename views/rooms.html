@@ -8,7 +8,7 @@
 
   <ul class="roomsList" id="roomsListUL">
     {{#each rooms}}
-      <a href="/room/{{title}}"><li>{{title}}</li>
+      <a href="/room/{{title}}"><li>{{title}}<span>{{users.length}}</span></li>
     {{/each}}
   </ul>
   <a href="/logout">Logout</a>

@@ -22,7 +22,7 @@
       var roomsListUL = $('#roomsListUL');
       var listStr = '';
       for (var cat of chatrooms) {
-        listStr += `<a href="/room/${cat.title}"><li>${cat.title}</li>`;
+        listStr += `<a href="/room/${cat.title}"><li>${cat.title}<span>${cat.users.length}</span></li>`;
       }
       roomsListUL.html('').append(listStr);
     }
