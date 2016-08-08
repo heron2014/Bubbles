@@ -3,17 +3,29 @@
 (function ($) {
 
   $(() => {
-    let host = $("input[name='host']").val().toString();
-    let socket = io(host + '/chatter', {
+    var host = $("input[name='host']").val().toString();
+    var socket = io(host + '/chatter', {
       transports: ['websocket']
     });
-    let userName = $("input[name='userName']").val();
-    let userPic = $("input[name='userPic']").val();
-    let roomId = $("input[name='roomId']").val();
-    let roomTitle = $("input[name='roomTitle']").val();
-    let chatUsers = $('.chatUsers');
-    let chatInput = $("input[name='userInput']");
-    let chatMessagesDiv = $('.chatMessages');
+    var userName = $("input[name='userName']").val();
+    var userPic = $("input[name='userPic']").val();
+    var roomId = $("input[name='roomId']").val();
+    var roomTitle = $("input[name='roomTitle']").val();
+    var chatUsers = $('.users-list');
+    var chatInput = $("input[name='userInput']");
+    var chatMessagesDiv = $('.chatMessages');
+    var slideOn = $('#slide-on');
+
+    slideOn.on('click', function (evt) {
+      var activeUsersDiv = $('.active-users');
+      if(activeUsersDiv.css("right") == "-120px") {
+       activeUsersDiv.animate({"right": '+=120'});
+       $(this).animate({"right": '+=120'});
+      } else{
+       activeUsersDiv.animate({"right": '-=120'});
+       $(this).animate({"right": '-=120'});
+      }
+    })
 
     socket.on('connect', () => {
       socket.emit('join', {
@@ -24,25 +36,35 @@
       });
     });
 
-    let userList = user => {
-      return `<img src="${user.userPic}" alt="${user.userName}">
-              <p>${user.userName}</p>`;
+    var userList = user => {
+      return `<li><a href="#"><img src="${user.userPic}" alt="${user.userName}"></a>
+              <a href="#">${user.userName}</a></li>`;
     };
 
     socket.on('updateUsersList', data => {
-      let parsedData = JSON.parse(data);
-      let usersListData = '';
-      for (let user of parsedData) {
+      var parsedData = JSON.parse(data);
+      var usersListData = '';
+      for (var user of parsedData) {
         usersListData += userList(user);
       }
       chatUsers.html('').html(usersListData);
     })
 
     //update feed/messages function
-    let updateFeed = (userPic, message) => {
-      let template = `<div class="chatBlock">
-                        <div class="userPic"><img src="${userPic}"></div>
-                        <div class="chatMsg">${message}</div>
+    var updateFeed = (userPic, message) => {
+      var template = `<div class="chatBlock">
+                        <p class="msg">${message}</p>
+                        <p><img src="${userPic}"></p>
+                      </div>;`
+      //first we hide , then latest messages goes first - prependTo , slideDown will animate the message for 2s
+      $(template).hide().prependTo(chatMessagesDiv).slideDown(200);
+    }
+
+    //update feed/messages function
+    var updateFeedFromOthers = (userPic, message) => {
+      var template = `<div class="chatBlockOthers">
+                        <p><img src="${userPic}"></p>
+                        <p class="msg">${message}</p>
                       </div>;`
       //first we hide , then latest messages goes first - prependTo , slideDown will animate the message for 2s
       $(template).hide().prependTo(chatMessagesDiv).slideDown(200);
@@ -53,7 +75,7 @@
     // I dont use arrow function because I need access to 'this' keyword which reference to input field
     chatInput.on('keyup', function(evt) {
       evt.preventDefault();
-      let messageField = $(this);
+      var messageField = $(this);
       // if the user press enter (13) and the input is not empty
       if (evt.which === 13 && messageField.val() !== '') {
         socket.emit('newMessage', {
@@ -73,8 +95,8 @@
 
     //get the messages from other users
     socket.on('inMessage', data => {
-      let parsedData = JSON.parse(data);
-      updateFeed(parsedData.userPic, parsedData.message);
+      var parsedData = JSON.parse(data);
+      updateFeedFromOthers(parsedData.userPic, parsedData.message);
     })
   });
 

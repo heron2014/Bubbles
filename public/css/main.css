@@ -1,3 +1,465 @@
-h1 {
-	color: grey;
+html {
+  margin:0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #01A0FE;
+}
+
+/*login page*/
+
+.login-wrapper, .wrapper {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapper  {
+  flex-direction: column;
+}
+
+.logo-container {
+  padding-top: 1em;
+}
+
+.logo-container h1 {
+  align-self: center;
+  font-size: 2em;
+  color: #222;
+  padding-top: 2em;
+}
+
+/*login button styling*/
+.button {
+  -webkit-font-smoothing: antialiased;
+  background-color: #222;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  letter-spacing: 1px;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.button-bubble {
+  position: relative;
+  z-index: 2;
+  color: white;
+  background: none;
+}
+
+.button-bubble-container {
+  position: relative;
+  display: inline-block;
+  background-color: #222;
+}
+
+.button-bubble-container .effect-button {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+  left: 25%;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #222;
+  -webkit-transition: background 0.1s ease-out;
+  -moz-transition: background 0.1s ease-out;
+  transition: background 0.1s ease-out;
+}
+
+.button-bubble-effect-container {
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 400%;
+  top: -150%;
+  left: -50%;
+  -webkit-filter: url("#goo");
+  -moz-filter: url("#goo");
+  filter: url("#goo");
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+.button-bubble-effect-container .circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #222;
+  -webkit-transition: background 0.1s ease-out;
+  -moz-transition: background 0.1s ease-out;
+  transition: background 0.1s ease-out;
+}
+
+.button-bubble-effect-container .circle.top-left {
+  top: 40%;
+  left: 27%;
+}
+
+.button-bubble-effect-container .circle.bottom-right {
+  bottom: 40%;
+  right: 27%;
+}
+
+.goo {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+/*end login button styling*/
+
+/*End login page*/
+
+
+/*chat room styling*/
+
+/*top-banner */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 2.3em;
+  margin: 0;
+  padding: 3px;
+  background-color: #000000;
+}
+
+.top-banner {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-banner p {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.top-banner a:first-of-type i.fa.fa-home {
+  color: #fff;
+  font-size: 1.5em;
+  padding: 4px;
+}
+
+.top-banner a:last-of-type img {
+  border-radius: 50%;
+  width: 25px;
+  padding-top: 2px;
+}
+/* End top-banner */
+
+/*active users*/
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+#slide-on {
+  display: none;
+}
+
+.active-users {
+  width: 280px;
+  height: 92.5%;
+  position: fixed;
+  right: 0;
+  background-color: #0296EC;
+  top: 2.3em;
+  overflow-y: auto;
+}
+
+.users-list li {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255, 236, 87, 0.39);
+  padding: 10px;
+}
+
+.users-list a {
+  align-self: center;
+  padding: 0 10px 0 0;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.users-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+
+/*End active users*/
+/*message input */
+.typePanel {
+  background-color: #FFEC57;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  height: 2.3em;
+  padding: 3px;
+  position: fixed;
+}
+
+i.fa.fa-ellipsis-h {
+  padding-left: 1em;
+  color: #252525;
+}
+
+input[name="userInput"] {
+  border: 0;
+  background-color: inherit;
+  font-size: 1em;
+  height: 2em;
+  width: 85%;
+  padding: 1em;
+  margin-right: .1%;
+  color: #000000;
+  z-index: 1;
+}
+
+input[name="userInput"]:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #252525;
+}
+
+:-moz-placeholder {
+  color: #252525;
+}
+
+::-moz-placeholder {
+  color: #252525;
+}
+
+:-ms-input-placeholder {
+  color: #252525;
+}
+
+.chatMessages {
+  margin-top: 2.8em;
+}
+
+.chatBlock, .chatBlockOthers {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.chatBlockOthers p img, .chatBlock p img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.chatBlockOthers p.msg, .chatBlock p.msg {
+  width: 80vw;
+  align-self: center;
+  padding: 10px 18px;
+  border-radius: 30px;
+  position: relative;
+  background-color: #fff;
+}
+
+.chatBlockOthers p.msg {
+  margin-left: 30px;
+}
+
+.chatBlock p.msg {
+  margin-right: 30px;
+}
+
+.chatBlockOthers p.msg::before, .chatBlock p.msg::before {
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  content: "";
+  /*commented out are another option*/
+  /*bottom: -8px;
+  left: -12px;*/
+  bottom: 18px;
+}
+
+.chatBlockOthers p.msg::before {
+  left: -20px;
+}
+
+.chatBlock p.msg::before {
+  right: -20px;
+}
+
+.chatBlockOthers p.msg::after, .chatBlock p.msg::after {
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  content: "";
+  /*background-color: #E6E7ED;*/
+  /*commented out are another option*/
+  /*bottom: 0;*/
+  /*left: -5px;*/
+  bottom: 6px;
+}
+
+.chatBlock p.msg::after {
+  right: -10px;
+}
+
+.chatBlockOthers p.msg::after {
+  left: -10px;
+}
+
+/* End message input */
+
+/*rooms styling*/
+.rooms-wrapper {
+  margin-top: 2.6em;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+#createBtn {
+  background-color: #000;
+  padding: 10px;
+  color: #FFEC57;
+}
+
+.roomsList li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 236, 87, 0.39);
+}
+
+.create {
+  align-self: center;
+}
+
+input[name="newRoom"] {
+  padding: 10px;
+  background-color: #FFEC57;
+  border: none;
+}
+
+.roomsList span {
+  margin-left: 20px;
+  border-radius: 50%;
+  background-color: #FFEC57;
+  padding: 4px 10px;
+}
+/*end rooms styling */
+
+@media only screen and (max-width: 1824px) {
+  .active-users {
+    width: 230px;
+  }
+
+  .chatBlock p.msg {
+    width: 75vw;
+  }
+
+}
+
+@media only screen and (max-width: 1224px) {
+  .active-users {
+    width: 220px;
+  }
+
+  .chatBlock p.msg {
+    width: 60vw;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .active-users {
+    width: 180px;
+  }
+  .users-list img {
+    width: 40px;
+  }
+
+  .users-list a {
+    font-size: 0.9em;
+  }
+
+  .chatBlock p.msg {
+    width: 60vw;
+  }
+
+}
+
+@media only screen and (max-width: 468px) {
+
+  #slide-on {
+    display:block;
+    border: none;
+    background-color: #FFEC57;
+    outline: none;
+    width: 40px;
+  }
+
+  .active-users {
+    width: 150px;
+    right: -120px;
+  }
+
+  .users-list img {
+    width: 30px;
+  }
+
+  .users-list a {
+    font-size: 0.8em;
+  }
+
+  .chatBlock p.msg {
+    width: 70vw;
+  }
+
 }

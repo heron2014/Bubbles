@@ -1,32 +1,28 @@
-<h1>Welcome to the {{title}}</h1>
-<div class="logged">
-  <h1>Logged in</h1>
-  <img src="{{user.profilePic}}" alt=""/>
-  <p>{{user.fullName}}</p>
-</div>
-<br>
-<br>
-<h1>Active users</h1>
-<div class="chatUsers">
-
+{{>top_banner}}
+<div class="active-users">
+  <button id="slide-on"><i class="fa fa-arrows-h" aria-hidden="true"></i></button>
+    <ul class="users-list">
+      <!-- here goes active users -->
+    </ul>
 </div>
 
 <div class="chatMessages">
-
+<!-- here goes messages -->
 </div>
-<br>
-<br>
-<br>
+
 <div class="typePanel">
-  <input type="text" name="userInput" placeholder="Type here and press enter">
+  <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+  <input type="text" name="userInput" placeholder="Type message ...">
 </div>
-
-<a href="/rooms">Rooms</a>
-<input type="hidden" name="userName" value="{{user.fullName}}"></input>
-<input type="hidden" name="userPic" value="{{user.profilePic}}"></input>
-<input type="hidden" name="roomId" value="{{id}}"></input>
-<input type="hidden" name="roomTitle" value="{{title}}"></input>
-<input type="hidden" name="host" value="{{host}}"></input>
-
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="gooeyAnimationFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+{{>hidden_fields}}
 
 <script src="/public/js/chat.js"></script>

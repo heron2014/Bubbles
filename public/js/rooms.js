@@ -3,13 +3,13 @@
 (function ($) {
 
   $(() => {
-    let host = $("input[name='host']").val().toString();
-    let socket = io(host + '/roomslist',{
+    var host = $("input[name='host']").val().toString();
+    var socket = io(host + '/roomslist',{
       transports: ['websocket']
     }); //roomslist is namespace for socket - it is not a route!
-    let newRoomInput = $("input[name='newRoom']");
+    var newRoomInput = $("input[name='newRoom']");
 
-    let compare = function (a, b) {
+    var compare = function (a, b) {
       if (a.timestamp > b.timestamp) {
         return -1;
       } else if (a.timestamp < b.timestamp) {
@@ -18,11 +18,11 @@
         return 0;
       }
     }
-    let renderChatRooms = chatrooms => {
-      let roomsListUL = $('#roomsListUL');
-      let listStr = '';
-      for (let cat of chatrooms) {
-        listStr += `<a href="/room/${cat.title}"><li>${cat.title}</li>`;
+     var renderChatRooms = chatrooms => {
+      var roomsListUL = $('#roomsListUL');
+      var listStr = '';
+      for (var cat of chatrooms) {
+        listStr += `<a href="/room/${cat.title}"><li>${cat.title}<span>${cat.users.length}</span></li>`;
       }
       roomsListUL.html('').append(listStr);
     }
@@ -30,7 +30,7 @@
     // get the list of chatrooms
     socket.emit('getChatRooms');
     socket.on('chatRoomsList', chatrooms => {
-      let order = JSON.parse(chatrooms).sort(compare);
+      var order = JSON.parse(chatrooms).sort(compare);
       renderChatRooms(order);
     });
 
