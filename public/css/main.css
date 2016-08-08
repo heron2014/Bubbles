@@ -388,16 +388,31 @@ input[name="newRoom"] {
 }
 /*end rooms styling */
 
+@media only screen and (max-width: 1824px) {
+  .active-users {
+    width: 230px;
+  }
+
+  .chatBlock p.msg {
+    width: 75vw;
+  }
+
+}
+
 @media only screen and (max-width: 1224px) {
   .active-users {
-    width: 250px;
+    width: 220px;
+  }
+
+  .chatBlock p.msg {
+    width: 60vw;
   }
 
 }
 
 @media only screen and (max-width: 768px) {
   .active-users {
-    width: 200px;
+    width: 180px;
   }
   .users-list img {
     width: 40px;
@@ -405,6 +420,10 @@ input[name="newRoom"] {
 
   .users-list a {
     font-size: 0.9em;
+  }
+
+  .chatBlock p.msg {
+    width: 60vw;
   }
 
 }
@@ -431,4 +450,9 @@ input[name="newRoom"] {
   .users-list a {
     font-size: 0.8em;
   }
+
+  .chatBlock p.msg {
+    width: 70vw;
+  }
+
 }
