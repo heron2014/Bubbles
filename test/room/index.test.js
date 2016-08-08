@@ -5,7 +5,6 @@ const server = require('../../lib/server.js');
 const config = require('../../lib/config');
 const JWT = require('jsonwebtoken');
 const redisClient = require('../../lib/db/redis_client');
-// const redisClient = require('redis').createClient(config.redis.port, config.redis.host, {no_ready_check: true});
 
 test("Attempt to access /rooms content (without auth token)", (t) => {
   t.plan(1);

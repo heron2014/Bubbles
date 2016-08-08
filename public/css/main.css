@@ -11,29 +11,32 @@ body {
 /*login page*/
 
 .login-wrapper, .wrapper {
-  height: 100vh;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-wrapper {
+  height: 60vh;
+  -ms-align-items: center;
+  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
 }
 
-.wrapper  {
-  flex-direction: column;
-}
-
-.logo-container {
-  padding-top: 1em;
-}
-
-.logo-container h1 {
-  align-self: center;
+.login-wrapper h1 {
   font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
   color: #222;
-  padding-top: 2em;
+}
+
+.login-wrapper h1 img {
+  margin-top: 2em;
 }
 
 /*login button styling*/
@@ -417,9 +420,15 @@ input[name="newRoom"] {
 }
 
 @media only screen and (max-width: 768px) {
+
+  .logo-container h1 {
+    font-size: 1em;
+  }
+
   .active-users {
     width: 160px;
   }
+
   .users-list img {
     width: 40px;
   }
