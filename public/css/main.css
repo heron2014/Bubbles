@@ -21,7 +21,7 @@ body {
   justify-content: space-around;
 }
 
-.wrapper {
+.wrapper  {
   flex-direction: column;
 }
 
@@ -351,6 +351,38 @@ input[name="userInput"]:focus{
 
 /* End message input */
 
+/*rooms styling*/
+.rooms-wrapper {
+  margin-top: 2.6em;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+#createBtn {
+  background-color: #000;
+  padding: 10px;
+  color: #FFEC57;
+}
+
+.roomsList li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 236, 87, 0.39);
+}
+
+.create {
+  align-self: center;
+}
+
+input[name="newRoom"] {
+  padding: 10px 50px;
+  background-color: #FFEC57;
+  border: none;
+}
+/*end rooms styling */
 
 @media only screen and (max-width: 1224px) {
   .active-users-inner {

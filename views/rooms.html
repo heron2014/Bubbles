@@ -1,16 +1,18 @@
+{{>top_banner}}
 
-<h1>Welcome {{user.fullName}}</h1>
-<img src="{{user.profilePic}}" alt=""/>
+<div class="rooms-wrapper">
+  <div class="create">
+    <input type="text" name="newRoom" placeholder="Type new room ...">
+    <a href="#" id="createBtn">Create</a>
+  </div>
 
-<input type="text" name="newRoom" placeholder="Create new chat room">
-<a href="#" id="createBtn">Create</a>
-<br>
-<h1>List of all rooms</h1>
-<ul class="roomsList" id="roomsListUL">
-  {{#each rooms}}
-    <a href="/room/{{title}}"><li>{{title}}</li>
-  {{/each}}
-</ul>
-<a href="/logout">Logout</a>
-<input type="hidden" name="host" value="{{host}}"></input>
+  <ul class="roomsList" id="roomsListUL">
+    {{#each rooms}}
+      <a href="/room/{{title}}"><li>{{title}}</li>
+    {{/each}}
+  </ul>
+  <a href="/logout">Logout</a>
+  <input type="hidden" name="host" value="{{host}}"></input>
+</div>
+
 <script src="/public/js/rooms.js"></script>
