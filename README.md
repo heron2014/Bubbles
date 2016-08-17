@@ -15,6 +15,8 @@ You can try it out : https://bubbles-chat.herokuapp.com (best experience in Chro
 
 ![msg](wireframes/msg.png)
 
+![chat-msg](wireframes/chat-msgg.png)
+
 ## Why are we building Bubbles?
 
 We want to go back to the 90s and recreate some of the retro chat rooms from our youth. The aim is to incorporate private chat as well. User will be able to create a new chat room to talk about whatever boy band they want.
